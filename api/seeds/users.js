@@ -6,11 +6,13 @@ const users = []
 
 const koichi = new User({  
   email: 'koichi@speedwagon.io',  
+  answers: [1,1,1,1,1,1,1,1,1,1]
 })
 users.push(koichi)
 
 const fulgren = new User({  
-  email: 'mrdude@gmail.com',  
+  email: 'mrdude@gmail.com',
+  answers: [6,6,6,6,6,6,6,6,6,6]
 })
 users.push(fulgren)
 
