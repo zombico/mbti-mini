@@ -29,7 +29,7 @@ render() {
 
   return(
     <section className="question-container">
-      <label for={this.props.id}>{this.props.title}</label>
+      <label htmlFor={this.props.id}>{this.props.title}</label>
       <div className="row-container" id={this.props.id}>
         <span className="agree">Agree</span>
         {inputfields}

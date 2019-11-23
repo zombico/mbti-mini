@@ -75,6 +75,7 @@ h2 {
   margin-top: 64px;
   padding: 8px 17px;
   cursor: pointer;
+  border: none;
 }
 
 label {
