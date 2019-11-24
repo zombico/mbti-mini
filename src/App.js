@@ -1,12 +1,22 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import RadioRow from './components/RadioRow'
+import Results from './components/Results'
 import './App.css';
 
 class App extends Component {
   state={
     email: '',
-    q1: ''
+    q01: '',
+    q02: '',
+    q03: '',
+    q04: '',
+    q05: '',
+    q06: '',
+    q07: '',
+    q08: '',
+    q09: '',
+    q10: '',
   }
 
   handleQ(q, answer) {  
@@ -23,14 +33,14 @@ class App extends Component {
     const answers = Object.keys(obj).map(i => obj[i])
     answers.shift()
     console.log(answers)
-    try {
-      
-      const email = this.state.email
-      
-      await axios.post('/seeresult/signup', { email, answers  })
-    } catch(e) {
-      console.error(e)
-    }
+    if (answers.length > 8) {    
+      try {      
+        const email = this.state.email      
+        await axios.post('/seeresult/signup', { email, answers  })
+      } catch(e) {
+        console.error(e)
+      }
+    } else alert('Please answer all the questions')
   }
 
 render() {
@@ -42,57 +52,58 @@ render() {
         <h2>Complete the 7 min test and get a detailed report of your lenses on the world.</h2>
       </section>
       <section className="all-questions">
+        <Results />
       <form onSubmit={(e) => this.handleSubmit(e)}>
         <RadioRow
-          id="q1" 
+          id="q01" 
           options={options}
           handleQ={(q, a) => this.handleQ(q, a)}
           title="You find it takes effort to introduce yourself to other people."
         />
         <RadioRow 
-          id="q2" 
+          id="q02" 
           options={options}
           handleQ={(q, a) => this.handleQ(q, a)}
           title="You consider yourself more practical than creative."
         />
         <RadioRow 
-          id="q3" 
+          id="q03" 
           options={options}
           handleQ={(q, a) => this.handleQ(q, a)}
           title="Winning a debate matters less to you than making sure no one gets upset."
         />
         <RadioRow 
-          id="q4" 
+          id="q04" 
           options={options}
           handleQ={(q, a) => this.handleQ(q, a)}
           title="You get energized going to social events that involve many interactions."
         />
         <RadioRow 
-          id="q5" 
+          id="q05" 
           options={options}
           handleQ={(q, a) => this.handleQ(q, a)}
           title="You often spend time exploring unrealistic and impractical yet intriguing ideas."
         />
         <RadioRow 
-          id="q6" 
+          id="q06" 
           options={options}
           handleQ={(q, a) => this.handleQ(q, a)}
           title="Deadlines seem to you to be of relative rather than absolute importance."
         />
         <RadioRow 
-          id="q7" 
+          id="q07" 
           options={options}
           handleQ={(q, a) => this.handleQ(q, a)}
           title="Logic is usually more important than heart when it comes to making important decisions."
         />
         <RadioRow 
-          id="q8" 
+          id="q08" 
           options={options}
           handleQ={(q, a) => this.handleQ(q, a)}
           title="Your home and work environments are quite tidy."
         />
         <RadioRow 
-          id="q9" 
+          id="q09" 
           options={options}
           handleQ={(q, a) => this.handleQ(q, a)}
           title="You do not mind being at the center of attention."
