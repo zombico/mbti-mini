@@ -10,6 +10,9 @@ app.use(bodyParser.json());
 app.use('/', express.static(
   path.join(__dirname, '../build'))
 )
+app.use('/results', express.static(
+  path.join(__dirname, '../build'))
+)
 
 app.use('/seeresult', require('./routes/users').router);
 

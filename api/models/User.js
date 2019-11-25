@@ -9,6 +9,10 @@ const userSchema = new Schema({
   answers: {
     type: Array,
     required: false
+  },
+  mockResult: {
+    type: Object,
+    required: false
   }
 })
 

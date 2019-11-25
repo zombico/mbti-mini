@@ -1,18 +1,40 @@
 import React, { Component } from 'react';
+import axios from 'axios'
+import { withRouter } from 'react-router-dom';
 
-class Results extends Component {
- state={}
 
- 
+class Results extends Component {  
+  state={
+    mockResult: ''
+  }
+
+  async  componentDidMount () {
+    const email = this.props.location.search.substr(1);
+    // console.log(email)
+
+    try {
+      const response = await axios.get(`/seeresult/${email}/info`)
+      console.log(response)
+      console.log(response.data.data[0][0].mockResult)
+      const z = response.data.data[0][0].mockResult
+      this.setState({ mockResult: z })
+
+    } catch (e) {
+      console.error(e)
+    }
+  }
 
  render(){
-  const testData = {
-    ie: 'E',
-    sn: 'S',
-    tf: 'T',
-    jp: 'P'
-  }
-   const data = testData;   
+   
+  
+  // const testData = {
+  //   ie: 'E',
+  //   sn: 'S',
+  //   tf: 'T',
+  //   jp: 'P'
+  // }
+  //  const data = testData;
+  const data = this.state.mockResult   
    return(
     <section className="results-container">
       <section className="left-side">
@@ -48,7 +70,7 @@ class Results extends Component {
           { data.tf === 'T' && 
           <><div className="result-box-active"/> <div className="result-box"/></>
           }
-          { data.stfn === 'F' && 
+          { data.tf === 'F' && 
           <><div className="result-box"/> <div className="result-box-active"/></>
           }                                
           <span className="result">Feeling (F)    </span>
@@ -70,4 +92,4 @@ class Results extends Component {
  }
 }
 
-export default Results
+export default withRouter(Results)
