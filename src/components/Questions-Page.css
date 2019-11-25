@@ -1,0 +1,148 @@
+.intro {
+  padding: 97px 0 48px 75px;
+}
+h1 {
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 21px;
+}
+
+h2 {
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: normal;
+}
+
+.all-questions {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row-container {
+  display: flex;
+  justify-content: space-between;  
+  max-width: 460px;
+  width: 100%;
+  margin: auto;
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Nunito';
+  font-weight: bold;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 27px 0;
+  max-width: 720px;
+  width: 100%;
+}
+
+.results-container {
+  display: flex;
+  font-family: 'Nunito';
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  
+  width: 90%;
+  padding: 27px 0;
+  justify-content: space-between;  
+  align-items: center;
+  margin: 62px 48px;
+}
+
+.result-title {
+  font-size: 26px;
+  font-family: 'Roboto';
+  font-weight: normal;
+}
+
+.left-side {
+  padding-left: 43px;
+  text-align: left;
+  white-space: nowrap;
+}
+.table-container {
+  display: flex;
+  justify-content: center;  
+  align-items: baseline;
+  padding-top: 21px;
+}
+
+.result-box {
+  background: #E9ECEF;
+  border-radius: 3px;
+  height: 12px;
+  width: 110px;
+}
+.result-box-active {
+  background: #A920CB;
+  border-radius: 0px 3px 3px 0px;
+  height: 12px;
+  width: 110px;
+}
+
+
+.radios {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.emailbox {
+  max-width: 570px;
+  width: 100%;
+  padding: 11px 23px;
+  margin: auto;
+  font-size: 18px;
+  background: #FFFFFF;
+  border: 2px solid #AAAAAA;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.submit {
+  background: #3D59FA;
+  border-radius: 3px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 64px;
+  padding: 8px 17px;
+  cursor: pointer;
+  border: none;
+}
+
+label {
+  
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: .8px;
+  margin-bottom: 27px;
+}
+
+span {
+  font-size: 14px;
+  white-space: nowrap;
+  line-height: 19px;
+}
+
+.disagree {
+  color: #FA4344;
+}
+
+.agree {
+  color: #00A079;
+}
+
+.result {
+  color: #878787;
+  padding: 0 12px;
+  width: 114px;
+}

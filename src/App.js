@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from "axios";
 import RadioRow from './components/RadioRow'
 import Results from './components/Results'
-import './App.css';
+import './components/Questions-Page.css';
 
 class App extends Component {
   state={
@@ -47,12 +47,13 @@ render() {
   const options = [1,2,3,4,5,6,7]
   return (
     <div className="App">
+      <Results />
       <section className="intro">
         <h1>Discover Your Perspective</h1>
         <h2>Complete the 7 min test and get a detailed report of your lenses on the world.</h2>
       </section>
       <section className="all-questions">
-        <Results />
+        
       <form onSubmit={(e) => this.handleSubmit(e)}>
         <RadioRow
           id="q01" 
